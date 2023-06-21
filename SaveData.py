@@ -22,10 +22,10 @@ def makeWindow(dim, theta, r):
 def readFile(path):
     file = open(path, "r")
     x_dat, y_dat, z_dat = np.loadtxt(path, unpack = True)
-    with open("x_data", 'wb') as outp:
-        pickle.dump(x_dat, outp)
-    with open("y_data", 'wb') as outp:
-        pickle.dump(y_dat, outp)
-    with open("z_data", 'wb') as outp:
-        pickle.dump(z_dat, outp)
+    with open("data_x", 'wb') as outp1:
+        pickle.dump(x_dat, outp1)
+    with open("data_y", 'wb') as outp2:
+        pickle.dump(y_dat, outp2)
+    with open("data_z", 'wb') as outp3:
+        pickle.dump(z_dat, outp3)
     return x_dat, y_dat, z_dat
