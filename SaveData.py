@@ -18,3 +18,14 @@ def makeWindow(dim, theta, r):
     with open(fileName, 'wb') as outp:
         pickle.dump(window, outp)
     return window
+
+def readFile(path):
+    file = open(path, "r")
+    x_dat, y_dat, z_dat = np.loadtxt(path, unpack = True)
+    with open("x_data", 'wb') as outp:
+        pickle.dump(x_dat, outp)
+    with open("y_data", 'wb') as outp:
+        pickle.dump(y_dat, outp)
+    with open("z_data", 'wb') as outp:
+        pickle.dump(z_dat, outp)
+    return x_dat, y_dat, z_dat
